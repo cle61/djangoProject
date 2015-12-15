@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import RequestContext, loader
 
 from .models import Cat
 
@@ -8,9 +9,12 @@ import pprint
 # Create your views here.
 
 def home(request):
-	"""Page d'accueil"""
-	text = "<h1>HELLO WORLD</h1>"
-	return HttpResponse(text)
+    cat_list = Cat.objects.all()[:5]
+    template = loader.get_template('index.html')
+    context = RequestContext(request, {
+        'cat_list': cat_list,
+    })
+    return HttpResponse(template.render(context))
 
 def cat(request, cat_id):
     try:

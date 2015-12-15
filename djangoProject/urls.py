@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^$', views.home),
     url(r'^admin/', include(admin.site.urls)),
     # ex: /polls/5/
-    url(r'^(?P<cat_id>[0-9]+)/$', views.cat, name='cat'),
+    url(r'^cat/(?P<cat_id>[0-9]+)/$', views.cat, name='cat'),
     # ex: /polls/5/results/
     url(r'^cats/', views.cats, name='cats'),
 ]

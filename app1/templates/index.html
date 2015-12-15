@@ -1,0 +1,10 @@
+{% if cat_list %}
+    <ul>
+    	<li>Derniers chats ajouté</li>
+    {% for cat in cat_list %}
+        <li><a href="/cat/{{ cat.id }}/">{{ cat.cat_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Il y a pas de chat :'(</p>
+{% endif %}
