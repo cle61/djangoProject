@@ -1,1 +1,10 @@
-cats.html
+{% extends 'layout.html' %}
+
+{% block title %}Django Cat - Tous les chats{% endblock %}
+
+{% block content %}
+	{% for cat in cat_list %}
+		<li><a href="/cat/{{ cat.id }}/">{{ cat.cat_name }}</a></li>
+	{% endfor %}
+	
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">Django Cat</a></h1>
+        <ul>
+        	<li><a href="/cats">voir tous les chats</a></li>
+        	{% if user.is_authenticated %}
+        		<li><a href="/logout">deconnexion</a></li>
+        	{% else %}
+        		<li><a href="/login">connexion</a></li>
+        	{% endif %}
+        </ul>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

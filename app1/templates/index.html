@@ -1,10 +1,16 @@
-{% if cat_list %}
+{% extends 'layout.html' %}
+
+{% block title %}DJango Cat - Index{% endblock %}
+
+{% block content %}
+    {% if cat_list %}
     <ul>
     	<li>Derniers chats ajouté</li>
     {% for cat in cat_list %}
         <li><a href="/cat/{{ cat.id }}/">{{ cat.cat_name }}</a></li>
     {% endfor %}
     </ul>
-{% else %}
-    <p>Il y a pas de chat :'(</p>
-{% endif %}
+	{% else %}
+	    <p>Il y a pas de chat :'(</p>
+	{% endif %}
+{% endblock %}

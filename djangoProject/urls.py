@@ -6,11 +6,11 @@ from app1 import views
 admin.autodiscover()
 
 urlpatterns = [
-    # ex: /polls/
     url(r'^$', views.home),
     url(r'^admin/', include(admin.site.urls)),
-    # ex: /polls/5/
     url(r'^cat/(?P<cat_id>[0-9]+)/$', views.cat, name='cat'),
-    # ex: /polls/5/results/
     url(r'^cats/', views.cats, name='cats'),
+    url(r'^cat/add/', views.add_cat, name='add Cat'),
+    url(r'^login$', views.connexion, name='connexion'),
+    url(r'^logout$', views.deconnexion, name='deconnexion'),
 ]

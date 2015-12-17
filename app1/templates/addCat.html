@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Django Cat - Ajouter un chat{% endblock %}
+
+{% block content %}
+<form action="/cat/add/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}

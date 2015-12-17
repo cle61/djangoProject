@@ -1,1 +1,9 @@
-{{ cat }}
+{% extends 'layout.html' %}
+
+{% block title %}Django Cat - Chat{% endblock %}
+
+{% block content %}
+
+	<p>{{ cat }} est de couleur {{ cat_color }}</p>
+
+{% endblock %}
